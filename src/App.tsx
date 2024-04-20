@@ -20,11 +20,7 @@ export default function App() {
 
   //take previous goals state and filter each element using id that does not same with id from arguement
   function handleDeleteGoal(id: number) {
-    setGoals((prevGoals) =>
-      prevGoals.filter((goal) => {
-        goal.id == id;
-      })
-    );
+    setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== id));
   }
 
   return (
