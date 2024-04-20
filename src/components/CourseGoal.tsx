@@ -1,7 +1,5 @@
 import { CourseGoalProps } from "../interface";
 
-
-
 export default function CourseGoal(props: CourseGoalProps) {
   return (
     <article>
@@ -9,7 +7,7 @@ export default function CourseGoal(props: CourseGoalProps) {
         <h2>{props.title}</h2>
         {props.children}
       </div>
-      <button>Delete</button>
+      <button onClick={() => props.onDeleteGoal(props.id)}>Delete</button>
     </article>
   );
 }

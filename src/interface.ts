@@ -1,18 +1,21 @@
 import { ReactNode } from "react";
 
 export interface CourseGoalProps {
+  id: number;
   title: string;
   children: ReactNode;
+  onDeleteGoal: (id: number) => void;
 }
 
 export interface CourseGoal {
+  id: number;
   title: string;
   description: string;
-  id: number;
 }
 
 export interface CourseGoalListProps {
   goals: CourseGoal[];
+  onDeleteGoal: (id: number) => void;
 }
 
 export interface Image {

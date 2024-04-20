@@ -17,6 +17,16 @@ export default function App() {
       return [...prevGoals, newGoals];
     });
   }
+
+  //take previous goals state and filter each element using id that does not same with id from arguement
+  function handleDeleteGoal(id: number) {
+    setGoals((prevGoals) =>
+      prevGoals.filter((goal) => {
+        goal.id == id;
+      })
+    );
+  }
+
   return (
     <div>
       <main>
@@ -24,7 +34,7 @@ export default function App() {
           <h1>List of goal</h1>
         </Header>
         <button onClick={handleAddGoal}>Add Goal</button>
-        <CourseGoalList goals={goals} />
+        <CourseGoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
       </main>
     </div>
   );
