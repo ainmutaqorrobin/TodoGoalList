@@ -4,6 +4,7 @@ interface CourseGoalProps {
   title: string;
   children: ReactNode;
 }
+
 export default function CourseGoal(props: CourseGoalProps) {
   return (
     <article>
