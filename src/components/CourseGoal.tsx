@@ -1,9 +1,6 @@
-import { type ReactNode } from "react";
+import { CourseGoalProps } from "../interface";
 
-interface CourseGoalProps {
-  title: string;
-  children: ReactNode;
-}
+
 
 export default function CourseGoal(props: CourseGoalProps) {
   return (

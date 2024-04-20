@@ -1,13 +1,4 @@
-import { ReactNode } from "react";
-
-interface Image {
-  src: string;
-  alt: string;
-}
-interface HeaderProps {
-  image: Image;
-  children: ReactNode;
-}
+import { HeaderProps } from "../interface";
 
 export default function Header(props: HeaderProps) {
   return (
