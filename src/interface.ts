@@ -27,3 +27,7 @@ export interface HeaderProps {
   image: Image;
   children: ReactNode;
 }
+
+export interface NewGoalProps {
+  onAddGoal: (goal: string, summary: string) => void;
+}
