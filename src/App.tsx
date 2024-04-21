@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import goalImage from "./assets/goals.jpg";
+import CourseGoalList from "./components/CourseGoalList";
+import Header from "./components/Header";
+import { useState } from "react";
+import { CourseGoal } from "./interface";
+import NewGoal from "./components/NewGoal";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [goals, setGoals] = useState<CourseGoal[]>([]);
+
+  function handleAddGoal(goal: string, summary: string) {
+    setGoals((prevGoals) => {
+      const newGoals: CourseGoal = {
+        id: Math.random(),
+        title: goal,
+        description: summary,
+      };
+      return [...prevGoals, newGoals];
+    });
+  }
+
+  //take previous goals state and filter each element using id that does not same with id from arguement
+  function handleDeleteGoal(id: number) {
+    setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== id));
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <main>
+        <Header image={{ src: goalImage, alt: "List of goals" }}>
+          <h1>List of goal</h1>
+        </Header>
+        <NewGoal onAddGoal={handleAddGoal} />
+        <CourseGoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
+      </main>
+    </div>
+  );
 }
-
-export default App
