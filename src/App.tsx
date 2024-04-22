@@ -1,4 +1,4 @@
-import goalImage from "./assets/goals.jpg";
+import goalImage from "./assets/me.jpg";
 import CourseGoalList from "./components/CourseGoalList";
 import Header from "./components/Header";
 import { useState } from "react";
