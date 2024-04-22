@@ -31,3 +31,15 @@ export interface HeaderProps {
 export interface NewGoalProps {
   onAddGoal: (goal: string, summary: string) => void;
 }
+
+export interface WarningBoxProps {
+  mode: "warning";
+  severity: "high" | "medium" | "low";
+  children: ReactNode;
+}
+export interface HintBoxProps {
+  mode: "hint";
+  children: ReactNode;
+}
+
+export type InfoBoxProps = WarningBoxProps | HintBoxProps;
