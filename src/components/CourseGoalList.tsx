@@ -28,14 +28,16 @@ export default function CourseGoalList({
         {message}
       </InfoBox>
     );
-    if (goals.length >= 6) {
-      warningBox = (
-        <InfoBox mode="warning" severity="high">
-          {message}
-        </InfoBox>
-      );
-    }
+
   }
+  if (goals.length >= 6) {
+    warningBox = (
+      <InfoBox mode="warning" severity="high">
+        {message}
+      </InfoBox>
+    );
+  }
+
   return (
     <>
       {warningBox}
