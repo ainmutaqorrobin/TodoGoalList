@@ -28,6 +28,7 @@ export default function CourseGoalList({
         {message}
       </InfoBox>
     );
+
   }
   if (goals.length >= 6) {
     warningBox = (
