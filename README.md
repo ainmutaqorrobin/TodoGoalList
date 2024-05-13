@@ -28,3 +28,22 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+# Outcomes of this project
+
+* Applied TypeSript in React.
+* Explored using React form components in TypeScript.
+* Implemented TypeScript generic type function.
+* Experienced using union componennt.
+* Understood how React props works.
+  
+# Running the Project Locally
+
+1. Clone the repository.
+   `git clone https://github.com/ainmutaqorrobin/TodoGoalList.git`
+3. Navigate to the project directory.
+   `cd TodoGoalList`
+5. Install dependencies.
+   `npm install`
+7. Start the development server.
+   `npm run dev`
